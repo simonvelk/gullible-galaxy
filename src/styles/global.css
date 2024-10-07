@@ -1,0 +1,197 @@
+:root{
+   --orange-100: #fff9f1;
+   --orange-200: #ffecd4;
+   --orange-300: #ffdfb8;
+   --orange-400: #ffd199;
+   --orange-500: #ffbe70;
+   --orange-600: #cc985a;
+   --orange-700: #997243;
+   --orange-800: #664c2d;
+   --orange-900: #332616;
+   --black-red: #342323;
+    --black-blue: #122323;
+    --neutral-500: #EBE9E1;
+    --cta-yellow: #F8E9A1;
+    --cta-yellow-bright: hsl(50, 100%, 82%);
+    --main-font: "Manrope", system-ui;
+    --radius-tiny: 2px;
+    --radius-small: 4px;
+    --radius-medium: 8px;
+    --radius-large: 16px;
+    --radius-xlarge: 24px;
+    --radius-xxlarge: 32px;
+}
+
+*{
+    font-family: var(--main-font);
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding-inline: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+section, article, body, html, header, footer
+{
+  margin: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Mark: Main CSS */
+h1{
+  font-size: clamp(2rem, 7.5cqi, 6rem);
+  color: var(--orange-500);
+}
+h2{
+  font-size: clamp(1.6rem, 3cqi, 3.5rem);
+  color: var(--orange-700);
+  font-weight: 900;
+}
+
+h3{
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  color: var(--black-blue);
+}
+
+p{
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+
+.wrapper{
+    width: clamp(320px, 90%, 1200px);
+    container-type: inline-size;
+    margin: 0 auto;
+}
+
+
+ .text-cta{
+  color: var(--red-500);
+  font-weight: 700;
+  text-decoration: none;
+  /* padding-block: 1rem; */
+}
+
+/* MARK: Buttons */
+.btn{
+  appearance: none;
+  background-color: var(--orange-300);
+  border-radius: var(--radius-small);
+  box-sizing: border-box;
+  color: var(--black-red);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 20px;
+  list-style: none;
+  padding: 0.8rem 1.2rem;
+  margin: 1rem 0;;
+  position: relative;
+  box-shadow: 0 0 1px 1px white;
+  transition: all 0.333s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.btn:hover {
+  background-color: var(--cta-yellow-bright);
+  box-shadow: 0 0 1px 1px white, 0 0 5px 4px var(--orange-200);
+  scale: 1.025;
+}
+.btn:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+.btn:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.btn:focus-visible {
+  outline: solid 2px var(--orange-500);
+  outline-offset: 3px;;
+}

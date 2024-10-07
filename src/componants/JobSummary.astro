@@ -1,0 +1,84 @@
+---
+const allJobs = await Astro.glob('../content/jobs/*.md');
+---
+
+
+
+{
+allJobs.map((job) => (
+<div class="work-card">
+<div class="work-info">
+<h3>{job.frontmatter.company}</h3>
+<div class="work-type">{job.frontmatter.type}</div>
+<p>
+    {job.frontmatter.description}
+        </p>
+        <a href="/" class="text-cta">Read more &rarr;</a>
+        <div class="skills-small">
+            <ul role="list">
+                <li>{job.frontmatter.skill1}</li>
+                <li>{job.frontmatter.skill2}</li>
+                <li>{job.frontmatter.skill3}</li>
+                <li>{job.frontmatter.skill4}</li>
+                <li>{job.frontmatter.skill5}</li>
+                <li>{job.frontmatter.skill6}</li>
+               
+            </ul>
+        </div>
+    </div>
+    <div class="work-image">
+    <img src="{job.frontmatter.image}" alt="Taranaki Health Foundation Laptop">
+    </div>
+</div>
+))
+}
+        
+       
+
+
+
+    <style>
+        
+        .work-info{
+            width: 80%;
+        }
+
+        .work-card{
+            padding-block: 2rem;
+            display: grid;
+            grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+            grid-template-rows: 1fr 1fr 3fr 2fr;
+        }
+
+        .work-type{
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding-block: 0.5rem;
+            position: relative;
+        }
+        .work-type:after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            border-radiur: 2px;
+            background-color: var(--red-500);
+            left: 0;
+            bottom: 6px;
+            z-index: 5;
+        }
+
+
+        .skills-small ul{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 3rem;
+            font-size: 0.8rem;
+            color: var(--red-700);
+            font-weight: 700;
+justify-content: space-around;
+align-self: end;
+
+        }
+    </style>

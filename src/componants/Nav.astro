@@ -1,0 +1,68 @@
+---
+import "../styles/global.css";
+---
+
+<nav><div class="wrapper">
+    <div class="nav-layout">
+        <div class="logo">
+            <img src="/../public/Velk-logo-WO.png" alt="Velk Logo">
+        </div>
+        <div class="nav-menu">  
+            <ul>
+                <li>Home</li>
+                <li>My Work</li>
+                <li>About me</li>
+            </ul>
+        </div>
+        <div class="nav-icons">
+            <img src="/../public/Linkedin.png" alt="Linkedin">
+            <img src="/../public/Instagram.png" alt="Instagram">
+            <img src="/../public/mail.png" alt="Email">
+        </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+/* MARK: Navigation */
+nav{
+  position: absolute;
+  /* background-color: black; */
+  padding-block: 1rem;
+  width: 100%;
+}
+
+.nav-layout{
+  width: clamp(350px, 95%, 1200px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  gap: 2rem;
+}
+
+.logo{
+justify-self: start;   
+align-items: center;;
+}
+
+.logo img{
+  height: clamp(25px, 2.5vh, 50px);
+}
+
+.nav-menu ul{
+  display: flex;
+  justify-content: end;
+  gap: 32px;
+  color: white;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.nav-icons{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+</style>
