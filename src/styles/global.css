@@ -114,6 +114,7 @@ textarea:not([rows]) {
 h1{
   font-size: clamp(2rem, 7.5cqi, 6rem);
   color: var(--orange-500);
+  font-weight: 700;;
 }
 h2{
   font-size: clamp(1.6rem, 3cqi, 3.5rem);
